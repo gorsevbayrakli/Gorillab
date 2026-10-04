@@ -5,9 +5,21 @@ import { Nav } from "@/components/site/Nav";
 import { Quiz } from "@/components/site/Quiz";
 import { Circled, EASE, Magnetic, Photo, RevealLines } from "@/components/site/motion";
 import { ADIMLAR, DERSLER, EGITMENLER, GALERI, INSTAGRAM, SSS, waLink } from "@/components/site/data";
+import boxingImage from "@/assets/gorillab/boxing.jpg.asset.json";
+import coachingImage from "@/assets/gorillab/coaching.jpg.asset.json";
+import gymImage from "@/assets/gorillab/gym.jpg.asset.json";
+import pullupImage from "@/assets/gorillab/pullup.jpg.asset.json";
+import reformerImage from "@/assets/gorillab/reformer.jpg.asset.json";
+import ringImage from "@/assets/gorillab/ring.jpg.asset.json";
+import strengthImage from "@/assets/gorillab/strength.jpg.asset.json";
+import boxingVideo from "@/assets/gorillab/boxing.mp4.asset.json";
+import trainingVideo from "@/assets/gorillab/training.mp4.asset.json";
 
 const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Reformer Pilates";
 const DESC = "Maltepe'de birebir boks, kickboks, Muay Thai ve reformer pilates. Aylık üyelik yok, ilk ders ücretsiz. Eğitmenin seni tanıyor.";
+const LESSON_IMAGES = [boxingImage.url, coachingImage.url, strengthImage.url, reformerImage.url] as const;
+const TRAINER_IMAGES = [coachingImage.url, boxingImage.url, pullupImage.url] as const;
+const GALLERY_IMAGES = [ringImage.url, gymImage.url, strengthImage.url, reformerImage.url, boxingImage.url, pullupImage.url, coachingImage.url] as const;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -80,8 +92,9 @@ function Hero() {
   return (
     <section className="grain relative flex min-h-svh flex-col justify-end overflow-hidden pb-10 pt-28 md:pb-16">
       <div className="absolute inset-0 -z-10">
-        <div className="photo-ph h-full w-full" role="img" aria-label="Boks dersi videosu" />
-        <span className="absolute right-5 top-24 font-mono text-xs uppercase text-muted-foreground">[VİDEO: birebir boks seansı, sessiz döngü]</span>
+        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="auto" poster={boxingImage.url} aria-label="Gorillab Studio'da birebir boks dersi">
+          <source src={boxingVideo.url} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-background/55" />
       </div>
       <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-[1fr_auto] lg:items-end">
@@ -120,11 +133,11 @@ function Dersler() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
         <RevealLines className="display mb-12 text-6xl md:text-8xl" lines={["Dersler"]} />
         <div className="grid gap-5 sm:grid-cols-2">
-          {DERSLER.map((d) => (
+          {DERSLER.map((d, index) => (
             <article key={d.t} className="group bg-surface">
               <div className="overflow-hidden">
                 <div className="transition-transform duration-700 ease-out group-hover:scale-105">
-                  <Photo label={d.img} className="aspect-[4/3]" />
+                  <Photo label={d.img} src={LESSON_IMAGES[index] ?? boxingImage.url} className="aspect-[4/3]" />
                 </div>
               </div>
               <div className="flex items-start justify-between gap-4 p-6">
@@ -186,11 +199,11 @@ function Egitmenler() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
         <RevealLines className="display mb-12 text-6xl md:text-8xl" lines={["Eğitmenler"]} />
       </div>
-      <div className="relative z-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:px-8 [scrollbar-width:thin]">
-        {EGITMENLER.map((n) => (
+      <div className="scrollbar-hidden relative z-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:px-8">
+        {EGITMENLER.map((n, index) => (
           <article key={n} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem]">
             <div className="grayscale transition-all duration-500 group-hover:grayscale-0">
-              <Photo label={`${n}, eğitmen portresi`} className="aspect-[3/4]" parallax={false} />
+              <Photo label={`${n}, Gorillab Studio antrenmanı`} src={TRAINER_IMAGES[index] ?? coachingImage.url} className="aspect-[3/4]" parallax={false} />
             </div>
             <h3 className="display mt-4 text-5xl">{n}</h3>
             <p className="mt-1 text-sm font-medium uppercase tracking-widest text-primary">[Branşlar]</p>
@@ -238,7 +251,7 @@ function Galeri() {
         </div>
         <div className="grid auto-rows-[160px] grid-cols-2 gap-3 md:auto-rows-[220px] md:grid-cols-4">
           {GALERI.map((g, k) => (
-            <Photo key={g} label={g} className={`h-full ${spans[k]}`} />
+            <Photo key={g} label={g} src={GALLERY_IMAGES[k] ?? ringImage.url} className={`h-full ${spans[k]}`} />
           ))}
         </div>
       </div>
@@ -278,7 +291,9 @@ function FinalCta() {
   return (
     <section className="grain relative overflow-hidden py-32 md:py-48">
       <div className="absolute inset-0 -z-0">
-        <Photo label="ring, geniş açı, loş ışık" className="h-full w-full" />
+        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="auto" poster={coachingImage.url} aria-label="Gorillab Studio antrenmanı">
+          <source src={trainingVideo.url} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-background/60" />
       </div>
       <div className="relative z-10 mx-auto max-w-5xl px-5 text-center">
