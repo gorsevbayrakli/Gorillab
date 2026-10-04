@@ -5,14 +5,14 @@ import { Nav } from "@/components/site/Nav";
 import { Quiz } from "@/components/site/Quiz";
 import { Circled, EASE, Magnetic, Photo, RevealLines } from "@/components/site/motion";
 import { ADIMLAR, DERSLER, EGITMENLER, GALERI, INSTAGRAM, SSS, waLink } from "@/components/site/data";
-import boxingImage from "@/assets/gorillab/boxing.jpg.asset.json";
+import boxingHeroVideo from "@/assets/gorillab/boxing-hero.mp4";
+import boxingHeroImage from "@/assets/gorillab/boxing-hero.jpg";
 import coachingImage from "@/assets/gorillab/coaching.jpg.asset.json";
 import gymImage from "@/assets/gorillab/gym.jpg.asset.json";
 import pullupImage from "@/assets/gorillab/pullup.jpg.asset.json";
 import reformerImage from "@/assets/gorillab/reformer.jpg.asset.json";
 import ringImage from "@/assets/gorillab/ring.jpg.asset.json";
 import strengthImage from "@/assets/gorillab/strength.jpg.asset.json";
-import boxingVideo from "@/assets/gorillab/boxing.mp4.asset.json";
 import trainingVideo from "@/assets/gorillab/training.mp4.asset.json";
 
 const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Reformer Pilates";
