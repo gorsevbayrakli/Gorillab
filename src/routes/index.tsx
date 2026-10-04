@@ -218,7 +218,7 @@ function Egitmenler() {
 function Yorumlar() {
   const [i, setI] = useState(0);
   const n = YORUMLAR.length;
-  const y = YORUMLAR[i];
+  const y = YORUMLAR[i] ?? YORUMLAR[0]!;
   return (
     <section className="bg-surface py-24 md:py-32" aria-label="Üyeler anlatıyor">
       <div className="mx-auto max-w-5xl px-5 md:px-8">
