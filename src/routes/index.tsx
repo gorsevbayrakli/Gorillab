@@ -87,7 +87,7 @@ function Hero() {
       <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-primary">Maltepe · Birebir Ders Stüdyosu</p>
-          <RevealLines as="h1" className="display hero-size !leading-[1.02] lg:max-w-[9ch]" lines={["Burada numara", "değil,", <Circled key="c">isimsin.</Circled>]} />
+          <RevealLines as="h1" className="display hero-size !leading-[1.12]" lines={["Burada numara", "değil,", <Circled key="c">isimsin.</Circled>]} />
           <p className="mt-6 max-w-xl text-lg text-foreground/85">
             Boks, kickboks, Muay Thai ve reformer pilates. Her ders sadece seninle, her eğitmen seni tanıyor.
           </p>

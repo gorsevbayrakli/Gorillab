@@ -87,7 +87,7 @@
 @utility hero-size {
   font-size: clamp(3rem, 11vw, 10rem);
   
-  @media (min-width: 1024px) { font-size: clamp(4rem, 7.2vw, 8rem); }
+  @media (min-width: 1024px) { font-size: clamp(4rem, 6.4vw, 7.5rem); }
 }
 
 @utility grain {
