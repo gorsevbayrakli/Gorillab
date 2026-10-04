@@ -11,7 +11,7 @@ export function RevealLines({ lines, className, as = "h2" }: { lines: ReactNode[
   return (
     <Tag className={className} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
       {lines.map((l, i) => (
-        <span key={i} className="block overflow-hidden pb-[0.06em]">
+        <span key={i} className="block" style={{ clipPath: "inset(-1em -1em -0.22em -1em)" }}>
           <motion.span
             className="block"
             variants={{ hidden: { y: reduce ? 0 : "105%" }, show: { y: 0 } }}
