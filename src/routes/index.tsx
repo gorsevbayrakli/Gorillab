@@ -217,23 +217,32 @@ function Egitmenler() {
 
 function Yorumlar() {
   const [i, setI] = useState(0);
-  const n = 4;
+  const n = YORUMLAR.length;
+  const y = YORUMLAR[i];
   return (
     <section className="bg-surface py-24 md:py-32" aria-label="Üyeler anlatıyor">
       <div className="mx-auto max-w-5xl px-5 md:px-8">
         <RevealLines className="display mb-12 text-6xl md:text-8xl" lines={["Üyeler anlatıyor"]} />
         <motion.blockquote key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: EASE }}>
-          <p className="text-3xl font-medium leading-snug md:text-5xl">“[Gerçek Google yorumu buraya]”</p>
-          <footer className="mt-6 text-sm text-muted-foreground">[Üye adı] · Yorum {i + 1}/{n}</footer>
+          <p className="text-3xl font-medium leading-snug md:text-5xl">“{y.text}”</p>
+          <footer className="mt-6 text-sm text-muted-foreground">{y.name} · Google yorumu · {i + 1}/{n}</footer>
         </motion.blockquote>
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
           <div className="flex gap-2">
             <button onClick={() => setI((i - 1 + n) % n)} aria-label="Önceki yorum" className="flex h-12 w-12 items-center justify-center rounded-full border hover:border-primary hover:text-primary">←</button>
-            <button onClick={() => setI((i + 1) % n)} aria-label="Sonraki yorum" className="flex h-12 w-12 items-center justify-center rounded-full border hover:border-primary hover:text-primary">→</button>
+            <button onClick={() => setI((i + 1) % n)} aria-label="Sonraki yorum" className="flex h-12 w-12 items-center justify-center rounded-full border hover:border-primary hover:text-primary">←</button>
           </div>
-          <span className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="display text-xl text-foreground">G</span> Google yorumları
-          </span>
+          <a
+            href="https://www.google.com/maps/search/Gorillab+Studio+Maltepe"
+            target="_blank"
+            rel="noopener"
+            className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <span aria-hidden className="text-primary">★★★★★</span>
+            <span>
+              <span className="font-semibold text-foreground">{GOOGLE_RATING}</span> · {GOOGLE_REVIEW_COUNT} Google yorumu
+            </span>
+          </a>
         </div>
       </div>
     </section>
