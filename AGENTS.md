@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Marketing site sections live in src/components/site; copy/data in data.ts so Turkish text is edited in one place.
