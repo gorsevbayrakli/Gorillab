@@ -4,22 +4,22 @@ import { useState } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Quiz } from "@/components/site/Quiz";
 import { Circled, EASE, Magnetic, Photo, RevealLines } from "@/components/site/motion";
-import { ADIMLAR, DERSLER, EGITMENLER, GALERI, INSTAGRAM, SSS, waLink } from "@/components/site/data";
-import boxingImage from "@/assets/gorillab/boxing.jpg.asset.json";
+import { ADIMLAR, DERSLER, EGITMENLER, GALERI, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, INSTAGRAM, SSS, YORUMLAR, waLink } from "@/components/site/data";
+import boxingHeroVideo from "@/assets/gorillab/boxing-hero.mp4";
+import boxingHeroImage from "@/assets/gorillab/boxing-hero.jpg";
 import coachingImage from "@/assets/gorillab/coaching.jpg.asset.json";
 import gymImage from "@/assets/gorillab/gym.jpg.asset.json";
 import pullupImage from "@/assets/gorillab/pullup.jpg.asset.json";
 import reformerImage from "@/assets/gorillab/reformer.jpg.asset.json";
 import ringImage from "@/assets/gorillab/ring.jpg.asset.json";
 import strengthImage from "@/assets/gorillab/strength.jpg.asset.json";
-import boxingVideo from "@/assets/gorillab/boxing.mp4.asset.json";
 import trainingVideo from "@/assets/gorillab/training.mp4.asset.json";
 
 const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Reformer Pilates";
 const DESC = "Maltepe'de birebir boks, kickboks, Muay Thai ve reformer pilates. Aylık üyelik yok, ilk ders ücretsiz. Eğitmenin seni tanıyor.";
-const LESSON_IMAGES = [boxingImage.url, coachingImage.url, strengthImage.url, reformerImage.url] as const;
-const TRAINER_IMAGES = [coachingImage.url, boxingImage.url, pullupImage.url] as const;
-const GALLERY_IMAGES = [ringImage.url, gymImage.url, strengthImage.url, reformerImage.url, boxingImage.url, pullupImage.url, coachingImage.url] as const;
+const LESSON_IMAGES = [boxingHeroImage, coachingImage.url, strengthImage.url, reformerImage.url] as const;
+const TRAINER_IMAGES = [coachingImage.url, boxingHeroImage, pullupImage.url] as const;
+const GALLERY_IMAGES = [ringImage.url, gymImage.url, strengthImage.url, reformerImage.url, boxingHeroImage, pullupImage.url, coachingImage.url] as const;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -92,8 +92,8 @@ function Hero() {
   return (
     <section className="grain relative flex min-h-svh flex-col justify-end overflow-hidden pb-10 pt-28 md:pb-16">
       <div className="absolute inset-0 -z-10">
-        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="auto" poster={boxingImage.url} aria-label="Gorillab Studio'da birebir boks dersi">
-          <source src={boxingVideo.url} type="video/mp4" />
+        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="auto" poster={boxingHeroImage} aria-label="Gorillab Studio'da birebir boks dersi">
+          <source src={boxingHeroVideo} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-background/55" />
       </div>
@@ -137,7 +137,7 @@ function Dersler() {
             <article key={d.t} className="group bg-surface">
               <div className="overflow-hidden">
                 <div className="transition-transform duration-700 ease-out group-hover:scale-105">
-                  <Photo label={d.img} src={LESSON_IMAGES[index] ?? boxingImage.url} className="aspect-[4/3]" />
+                  <Photo label={d.img} src={LESSON_IMAGES[index] ?? boxingHeroImage} className="aspect-[4/3]" />
                 </div>
               </div>
               <div className="flex items-start justify-between gap-4 p-6">
@@ -217,23 +217,32 @@ function Egitmenler() {
 
 function Yorumlar() {
   const [i, setI] = useState(0);
-  const n = 4;
+  const n = YORUMLAR.length;
+  const y = YORUMLAR[i] ?? YORUMLAR[0]!;
   return (
     <section className="bg-surface py-24 md:py-32" aria-label="Üyeler anlatıyor">
       <div className="mx-auto max-w-5xl px-5 md:px-8">
         <RevealLines className="display mb-12 text-6xl md:text-8xl" lines={["Üyeler anlatıyor"]} />
         <motion.blockquote key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: EASE }}>
-          <p className="text-3xl font-medium leading-snug md:text-5xl">“[Gerçek Google yorumu buraya]”</p>
-          <footer className="mt-6 text-sm text-muted-foreground">[Üye adı] · Yorum {i + 1}/{n}</footer>
+          <p className="max-w-3xl text-2xl font-medium leading-snug md:text-3xl">“{y.text}”</p>
+          <footer className="mt-6 text-sm text-muted-foreground">{y.name} · Google yorumu · {i + 1}/{n}</footer>
         </motion.blockquote>
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
           <div className="flex gap-2">
             <button onClick={() => setI((i - 1 + n) % n)} aria-label="Önceki yorum" className="flex h-12 w-12 items-center justify-center rounded-full border hover:border-primary hover:text-primary">←</button>
             <button onClick={() => setI((i + 1) % n)} aria-label="Sonraki yorum" className="flex h-12 w-12 items-center justify-center rounded-full border hover:border-primary hover:text-primary">→</button>
           </div>
-          <span className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="display text-xl text-foreground">G</span> Google yorumları
-          </span>
+          <a
+            href="https://www.google.com/maps/search/Gorillab+Studio+Maltepe"
+            target="_blank"
+            rel="noopener"
+            className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <span aria-hidden className="text-primary">★★★★★</span>
+            <span>
+              <span className="font-semibold text-foreground">{GOOGLE_RATING}</span> · {GOOGLE_REVIEW_COUNT} Google yorumu
+            </span>
+          </a>
         </div>
       </div>
     </section>
