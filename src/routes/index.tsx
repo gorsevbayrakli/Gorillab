@@ -230,7 +230,7 @@ function Yorumlar() {
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
           <div className="flex gap-2">
             <button onClick={() => setI((i - 1 + n) % n)} aria-label="Önceki yorum" className="flex h-12 w-12 items-center justify-center rounded-full border hover:border-primary hover:text-primary">←</button>
-            <button onClick={() => setI((i + 1) % n)} aria-label="Sonraki yorum" className="flex h-12 w-12 items-center justify-center rounded-full border hover:border-primary hover:text-primary">←</button>
+            <button onClick={() => setI((i + 1) % n)} aria-label="Sonraki yorum" className="flex h-12 w-12 items-center justify-center rounded-full border hover:border-primary hover:text-primary">→</button>
           </div>
           <a
             href="https://www.google.com/maps/search/Gorillab+Studio+Maltepe"
