@@ -41,6 +41,32 @@ export const SSS = [
   { q: "Sakatlığım var, yine de gelebilir miyim?", a: "Eğitmenine anlat, programı buna göre kurarız. Gerekirse önce doktorunla konuşmanı isteriz." },
 ];
 
+export const GOOGLE_RATING = "5.0";
+export const GOOGLE_REVIEW_COUNT = 35;
+
+export const YORUMLAR = [
+  {
+    name: "Serkan",
+    text: "Doğukan hocayla 6 ay boyunca ders aldım ve aldığım dersler sonucunda ciddi bir zayıflama formu geçirdim. Anıl hoca ve Yiğit hocanın da motivasyonu sayesinde istediğim kiloya fit bir şekilde girdim. Kesinlikle tavsiye edeceğim bir salon.",
+  },
+  {
+    name: "Rahşan",
+    text: "Güler yüzlü hocalar, ferah çalışma alanı. Ders ücretlerinde de makul. Tavsiye ederim.",
+  },
+  {
+    name: "Cemal",
+    text: "Profesyonel bir ekip, gelişiminize büyük katkıları olacak.",
+  },
+  {
+    name: "Ece",
+    text: "Konumu iyi ve donanımlı bir salon.",
+  },
+  {
+    name: "Gülcan",
+    text: "Hocalar ilgili, çok rahat spor yapabileceğiniz bir yer.",
+  },
+] as const;
+
 export const GALERI = [
   "ring ipleri, sabah ışığı",
   "ağır torbalar sırada",
