@@ -92,8 +92,8 @@ function Hero() {
   return (
     <section className="grain relative flex min-h-svh flex-col justify-end overflow-hidden pb-10 pt-28 md:pb-16">
       <div className="absolute inset-0 -z-10">
-        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="auto" poster={boxingImage.url} aria-label="Gorillab Studio'da birebir boks dersi">
-          <source src={boxingVideo.url} type="video/mp4" />
+        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="auto" poster={boxingHeroImage} aria-label="Gorillab Studio'da birebir boks dersi">
+          <source src={boxingHeroVideo} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-background/55" />
       </div>
