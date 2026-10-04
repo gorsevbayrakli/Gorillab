@@ -137,7 +137,7 @@ function Dersler() {
             <article key={d.t} className="group bg-surface">
               <div className="overflow-hidden">
                 <div className="transition-transform duration-700 ease-out group-hover:scale-105">
-                  <Photo label={d.img} src={LESSON_IMAGES[index] ?? boxingImage.url} className="aspect-[4/3]" />
+                  <Photo label={d.img} src={LESSON_IMAGES[index] ?? boxingHeroImage} className="aspect-[4/3]" />
                 </div>
               </div>
               <div className="flex items-start justify-between gap-4 p-6">
