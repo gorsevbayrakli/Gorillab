@@ -55,8 +55,8 @@ export function Circled({ children }: { children: ReactNode }) {
   );
 }
 
-/** Labeled photo placeholder with slow parallax + scale-in. */
-export function Photo({ label, className, parallax = true }: { label: string; className?: string; parallax?: boolean }) {
+/** Documentary photo with slow parallax + scale-in. */
+export function Photo({ label, src, className, parallax = true }: { label: string; src?: string; className?: string; parallax?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
@@ -64,16 +64,20 @@ export function Photo({ label, className, parallax = true }: { label: string; cl
   return (
     <div ref={ref} className={cn("relative overflow-hidden bg-surface", className)} role="img" aria-label={label}>
       <motion.div
-        className="photo-ph absolute -inset-[10%] flex items-center justify-center"
+        className={cn("absolute -inset-[10%] flex items-center justify-center", src ? "" : "photo-ph")}
         style={parallax && !reduce ? { y } : {}}
         initial={{ scale: reduce ? 1 : 1.08 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.4, ease: EASE }}
-      />
-      <span className="absolute inset-0 flex items-center justify-center p-4 text-center font-mono text-xs uppercase tracking-wider text-muted-foreground">
-        [FOTO: {label}]
-      </span>
+      >
+        {src ? <img src={src} alt="" loading="lazy" className="h-full w-full object-cover" /> : null}
+      </motion.div>
+      {!src ? (
+        <span className="absolute inset-0 flex items-center justify-center p-4 text-center font-mono text-xs uppercase tracking-wider text-muted-foreground">
+          [FOTO: {label}]
+        </span>
+      ) : null}
     </div>
   );
 }
