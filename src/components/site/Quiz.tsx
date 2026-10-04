@@ -20,15 +20,15 @@ const schema = z.object({
 
 export function Quiz() {
   const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [answers, setAnswers] = useState<{ blocker?: string; discipline?: string; days?: string }>({});
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [kvkk, setKvkk] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<{ name?: string; phone?: string; kvkk?: string }>({});
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
 
-  const pick = (key: string, v: string) => {
+  const pick = (key: "blocker" | "discipline" | "days", v: string) => {
     setAnswers((a) => ({ ...a, [key]: v }));
     setStep((s) => s + 1);
   };
@@ -47,7 +47,7 @@ export function Quiz() {
     const msg = `Merhaba Gorillab! Ben ${name.trim()}. Ücretsiz deneme dersi ayarlamak istiyorum.\n• Beni durduran: ${answers.blocker}\n• İlgilendiğim branş: ${answers.discipline}\n• Haftada: ${answers.days}\n• Telefon: ${fullPhone}`;
     const win = window.open(waLink(msg), "_blank");
     await supabase.from("trial_requests").insert({
-      name: name.trim(), phone: fullPhone, blocker: answers.blocker, discipline: answers.discipline, days: answers.days,
+      name: name.trim(), phone: fullPhone, blocker: answers.blocker ?? "", discipline: answers.discipline ?? "", days: answers.days ?? "",
     });
     if (!win) window.location.href = waLink(msg);
     setSending(false);
@@ -55,6 +55,7 @@ export function Quiz() {
   };
 
   const total = 4;
+  const cur = QUIZ[Math.min(step, 2)]!;
   return (
     <div id="deneme" className="grain w-full max-w-md scroll-mt-24 bg-surface p-6 text-foreground shadow-2xl sm:p-8">
       <div className="relative z-10">
@@ -86,13 +87,13 @@ export function Quiz() {
               </div>
             ) : step < 3 ? (
               <>
-                <p className="display mb-5 text-3xl sm:text-4xl">{QUIZ[step].q}</p>
+                <p className="display mb-5 text-3xl sm:text-4xl">{cur.q}</p>
                 <div className="flex flex-col gap-2">
-                  {QUIZ[step].opts.map((o) => (
+                  {cur.opts.map((o) => (
                     <button
                       key={o}
-                      onClick={() => pick(QUIZ[step].key, o)}
-                      className={`group flex items-center justify-between border px-4 py-3.5 text-left font-medium transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground ${answers[QUIZ[step].key] === o ? "border-primary" : "border-border"}`}
+                      onClick={() => pick(cur.key, o)}
+                      className={`group flex items-center justify-between border px-4 py-3.5 text-left font-medium transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground ${answers[cur.key] === o ? "border-primary" : "border-border"}`}
                     >
                       {o}
                       <span className="translate-x-[-6px] opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">→</span>

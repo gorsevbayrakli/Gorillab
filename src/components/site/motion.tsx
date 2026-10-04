@@ -65,7 +65,7 @@ export function Photo({ label, className, parallax = true }: { label: string; cl
     <div ref={ref} className={cn("relative overflow-hidden bg-surface", className)} role="img" aria-label={label}>
       <motion.div
         className="photo-ph absolute -inset-[10%] flex items-center justify-center"
-        style={parallax && !reduce ? { y } : undefined}
+        style={parallax && !reduce ? { y } : {}}
         initial={{ scale: reduce ? 1 : 1.08 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
