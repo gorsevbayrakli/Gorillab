@@ -17,9 +17,9 @@ import trainingVideo from "@/assets/gorillab/training.mp4.asset.json";
 
 const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Reformer Pilates";
 const DESC = "Maltepe'de birebir boks, kickboks, Muay Thai ve reformer pilates. Aylık üyelik yok, ilk ders ücretsiz. Eğitmenin seni tanıyor.";
-const LESSON_IMAGES = [boxingImage.url, coachingImage.url, strengthImage.url, reformerImage.url];
-const TRAINER_IMAGES = [coachingImage.url, boxingImage.url, pullupImage.url];
-const GALLERY_IMAGES = [ringImage.url, gymImage.url, strengthImage.url, reformerImage.url, boxingImage.url, pullupImage.url, coachingImage.url];
+const LESSON_IMAGES = [boxingImage.url, coachingImage.url, strengthImage.url, reformerImage.url] as const;
+const TRAINER_IMAGES = [coachingImage.url, boxingImage.url, pullupImage.url] as const;
+const GALLERY_IMAGES = [ringImage.url, gymImage.url, strengthImage.url, reformerImage.url, boxingImage.url, pullupImage.url, coachingImage.url] as const;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -92,7 +92,7 @@ function Hero() {
   return (
     <section className="grain relative flex min-h-svh flex-col justify-end overflow-hidden pb-10 pt-28 md:pb-16">
       <div className="absolute inset-0 -z-10">
-        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label="Gorillab Studio'da birebir boks dersi">
+        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="auto" poster={boxingImage.url} aria-label="Gorillab Studio'da birebir boks dersi">
           <source src={boxingVideo.url} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-background/55" />
@@ -137,7 +137,7 @@ function Dersler() {
             <article key={d.t} className="group bg-surface">
               <div className="overflow-hidden">
                 <div className="transition-transform duration-700 ease-out group-hover:scale-105">
-                  <Photo label={d.img} src={LESSON_IMAGES[index]} className="aspect-[4/3]" />
+                  <Photo label={d.img} src={LESSON_IMAGES[index] ?? boxingImage.url} className="aspect-[4/3]" />
                 </div>
               </div>
               <div className="flex items-start justify-between gap-4 p-6">
@@ -203,7 +203,7 @@ function Egitmenler() {
         {EGITMENLER.map((n, index) => (
           <article key={n} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem]">
             <div className="grayscale transition-all duration-500 group-hover:grayscale-0">
-              <Photo label={`${n}, Gorillab Studio antrenmanı`} src={TRAINER_IMAGES[index]} className="aspect-[3/4]" parallax={false} />
+              <Photo label={`${n}, Gorillab Studio antrenmanı`} src={TRAINER_IMAGES[index] ?? coachingImage.url} className="aspect-[3/4]" parallax={false} />
             </div>
             <h3 className="display mt-4 text-5xl">{n}</h3>
             <p className="mt-1 text-sm font-medium uppercase tracking-widest text-primary">[Branşlar]</p>
@@ -251,7 +251,7 @@ function Galeri() {
         </div>
         <div className="grid auto-rows-[160px] grid-cols-2 gap-3 md:auto-rows-[220px] md:grid-cols-4">
           {GALERI.map((g, k) => (
-            <Photo key={g} label={g} src={GALLERY_IMAGES[k]} className={`h-full ${spans[k]}`} />
+            <Photo key={g} label={g} src={GALLERY_IMAGES[k] ?? ringImage.url} className={`h-full ${spans[k]}`} />
           ))}
         </div>
       </div>
@@ -291,7 +291,7 @@ function FinalCta() {
   return (
     <section className="grain relative overflow-hidden py-32 md:py-48">
       <div className="absolute inset-0 -z-0">
-        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label="Gorillab Studio antrenmanı">
+        <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="auto" poster={coachingImage.url} aria-label="Gorillab Studio antrenmanı">
           <source src={trainingVideo.url} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-background/60" />
