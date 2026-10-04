@@ -224,7 +224,7 @@ function Yorumlar() {
       <div className="mx-auto max-w-5xl px-5 md:px-8">
         <RevealLines className="display mb-12 text-6xl md:text-8xl" lines={["Üyeler anlatıyor"]} />
         <motion.blockquote key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: EASE }}>
-          <p className="text-3xl font-medium leading-snug md:text-5xl">“{y.text}”</p>
+          <p className="max-w-3xl text-2xl font-medium leading-snug md:text-3xl">“{y.text}”</p>
           <footer className="mt-6 text-sm text-muted-foreground">{y.name} · Google yorumu · {i + 1}/{n}</footer>
         </motion.blockquote>
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
