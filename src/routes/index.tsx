@@ -17,9 +17,9 @@ import trainingVideo from "@/assets/gorillab/training.mp4.asset.json";
 
 const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Reformer Pilates";
 const DESC = "Maltepe'de birebir boks, kickboks, Muay Thai ve reformer pilates. Aylık üyelik yok, ilk ders ücretsiz. Eğitmenin seni tanıyor.";
-const LESSON_IMAGES = [boxingImage.url, coachingImage.url, strengthImage.url, reformerImage.url] as const;
-const TRAINER_IMAGES = [coachingImage.url, boxingImage.url, pullupImage.url] as const;
-const GALLERY_IMAGES = [ringImage.url, gymImage.url, strengthImage.url, reformerImage.url, boxingImage.url, pullupImage.url, coachingImage.url] as const;
+const LESSON_IMAGES = [boxingHeroImage, coachingImage.url, strengthImage.url, reformerImage.url] as const;
+const TRAINER_IMAGES = [coachingImage.url, boxingHeroImage, pullupImage.url] as const;
+const GALLERY_IMAGES = [ringImage.url, gymImage.url, strengthImage.url, reformerImage.url, boxingHeroImage, pullupImage.url, coachingImage.url] as const;
 
 const jsonLd = {
   "@context": "https://schema.org",
