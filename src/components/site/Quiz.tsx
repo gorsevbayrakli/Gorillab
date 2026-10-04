@@ -96,7 +96,7 @@ export function Quiz() {
                       className={`group flex items-center justify-between border px-4 py-3.5 text-left font-medium transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground ${answers[cur.key] === o ? "border-primary" : "border-border"}`}
                     >
                       {o}
-                      <span className="translate-x-[-6px] opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">→</span>
+                      <span aria-hidden className="translate-x-[-6px] opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">→</span>
                     </button>
                   ))}
                 </div>
