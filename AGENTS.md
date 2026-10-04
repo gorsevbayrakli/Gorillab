@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Marketing site sections live in src/components/site; copy/data in data.ts so Turkish text is edited in one place.
+- Public site media should be stored as project assets and rendered through the shared Photo component so sections retain consistent motion and cropping.

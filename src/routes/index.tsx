@@ -186,7 +186,7 @@ function Egitmenler() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
         <RevealLines className="display mb-12 text-6xl md:text-8xl" lines={["Eğitmenler"]} />
       </div>
-      <div className="relative z-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:px-8 [scrollbar-width:thin]">
+      <div className="scrollbar-hidden relative z-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:px-8">
         {EGITMENLER.map((n) => (
           <article key={n} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem]">
             <div className="grayscale transition-all duration-500 group-hover:grayscale-0">
