@@ -84,7 +84,11 @@
   font-weight: 400;
 }
 
-@utility hero-size { font-size: clamp(3rem, 11vw, 10rem); }
+@utility hero-size {
+  font-size: clamp(3rem, 11vw, 10rem);
+  line-height: 1;
+  @media (min-width: 1024px) { font-size: clamp(4rem, 7.2vw, 8rem); }
+}
 
 @utility grain {
   position: relative;
