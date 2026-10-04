@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Quiz } from "@/components/site/Quiz";
 import { Circled, EASE, Magnetic, Photo, RevealLines } from "@/components/site/motion";
-import { ADIMLAR, DERSLER, EGITMENLER, GALERI, INSTAGRAM, SSS, waLink } from "@/components/site/data";
+import { ADIMLAR, DERSLER, EGITMENLER, GALERI, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, INSTAGRAM, SSS, YORUMLAR, waLink } from "@/components/site/data";
 import boxingHeroVideo from "@/assets/gorillab/boxing-hero.mp4";
 import boxingHeroImage from "@/assets/gorillab/boxing-hero.jpg";
 import coachingImage from "@/assets/gorillab/coaching.jpg.asset.json";
