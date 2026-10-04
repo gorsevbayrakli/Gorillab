@@ -14,7 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      trial_requests: {
+        Row: {
+          blocker: string
+          created_at: string
+          days: string
+          discipline: string
+          id: string
+          name: string
+          phone: string
+        }
+        Insert: {
+          blocker: string
+          created_at?: string
+          days: string
+          discipline: string
+          id?: string
+          name: string
+          phone: string
+        }
+        Update: {
+          blocker?: string
+          created_at?: string
+          days?: string
+          discipline?: string
+          id?: string
+          name?: string
+          phone?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
