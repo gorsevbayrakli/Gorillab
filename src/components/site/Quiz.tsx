@@ -24,6 +24,8 @@ export function Quiz() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [kvkk, setKvkk] = useState(false);
+  const [consentAt, setConsentAt] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState(false);
   const [errors, setErrors] = useState<{ name?: string; phone?: string; kvkk?: string }>({});
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
@@ -42,15 +44,22 @@ export function Quiz() {
       return setErrors(errs);
     }
     setErrors({});
+    setSubmitError(false);
     setSending(true);
     const fullPhone = "+90" + normalizePhone(phone);
     const msg = `Merhaba Gorillab! Ben ${name.trim()}. Ücretsiz deneme dersi ayarlamak istiyorum.\n• Beni durduran: ${answers.blocker}\n• İlgilendiğim branş: ${answers.discipline}\n• Haftada: ${answers.days}\n• Telefon: ${fullPhone}`;
     const win = window.open(waLink(msg), "_blank");
-    await supabase.from("trial_requests").insert({
+    const { error } = await supabase.from("trial_requests").insert({
       name: name.trim(), phone: fullPhone, blocker: answers.blocker ?? "", discipline: answers.discipline ?? "", days: answers.days ?? "",
+      kvkk_consent_at: consentAt ?? new Date().toISOString(),
     });
     if (!win) window.location.href = waLink(msg);
     setSending(false);
+    if (error) {
+      console.error("trial_requests insert failed:", error);
+      setSubmitError(true);
+      return;
+    }
     setDone(true);
   };
 
@@ -117,12 +126,13 @@ export function Quiz() {
                   {errors.phone && <span className="mt-1 block text-primary">{errors.phone}</span>}
                 </label>
                 <label className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <input type="checkbox" checked={kvkk} onChange={(e) => setKvkk(e.target.checked)} className="mt-1 h-4 w-4 accent-primary" />
+                  <input type="checkbox" checked={kvkk} onChange={(e) => { setKvkk(e.target.checked); setConsentAt(e.target.checked ? new Date().toISOString() : null); }} className="mt-1 h-4 w-4 accent-primary" />
                   <span>
                     <Link to="/kvkk" className="underline hover:text-foreground">KVKK Aydınlatma Metni</Link>'ni okudum, kişisel verilerimin deneme dersi için işlenmesini onaylıyorum.
                   </span>
                 </label>
                 {errors.kvkk && <span className="text-sm text-primary">{errors.kvkk}</span>}
+                {submitError && <p role="alert" className="text-sm text-primary">Bir sorun oldu, WhatsApp'tan yazmaya devam edebilirsin.</p>}
                 <button disabled={sending} className="mt-2 rounded-full bg-primary px-6 py-4 font-bold uppercase tracking-wide text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60">
                   {sending ? "Gönderiliyor…" : "Deneme dersimi ayarla"}
                 </button>
