@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
-import { QUIZ, waLink } from "./data";
+import { QUIZ } from "./data";
 import { EASE } from "./motion";
 
 const normalizePhone = (raw: string) => {
@@ -47,13 +47,10 @@ export function Quiz() {
     setSubmitError(false);
     setSending(true);
     const fullPhone = "+90" + normalizePhone(phone);
-    const msg = `Merhaba Gorillab! Ben ${name.trim()}. Ücretsiz deneme dersi ayarlamak istiyorum.\n• Beni durduran: ${answers.blocker}\n• İlgilendiğim branş: ${answers.discipline}\n• Haftada: ${answers.days}\n• Telefon: ${fullPhone}`;
-    const win = window.open(waLink(msg), "_blank");
     const { error } = await supabase.from("trial_requests").insert({
       name: name.trim(), phone: fullPhone, blocker: answers.blocker ?? "", discipline: answers.discipline ?? "", days: answers.days ?? "",
       kvkk_consent_at: consentAt ?? new Date().toISOString(),
     });
-    if (!win) window.location.href = waLink(msg);
     setSending(false);
     if (error) {
       console.error("trial_requests insert failed:", error);
@@ -132,7 +129,7 @@ export function Quiz() {
                   </span>
                 </label>
                 {errors.kvkk && <span className="text-sm text-primary">{errors.kvkk}</span>}
-                {submitError && <p role="alert" className="text-sm text-primary">Bir sorun oldu, WhatsApp'tan yazmaya devam edebilirsin.</p>}
+                {submitError && <p role="alert" className="text-sm text-primary">Bir sorun oldu, lütfen tekrar dene.</p>}
                 <button disabled={sending} className="mt-2 rounded-full bg-primary px-6 py-4 font-bold uppercase tracking-wide text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60">
                   {sending ? "Gönderiliyor…" : "Deneme dersimi ayarla"}
                 </button>
