@@ -31,7 +31,7 @@ export type Database = {
           days: string
           discipline: string
           id?: string
-          kvkk_consent_at: string
+          kvkk_consent_at?: string
           name: string
           phone: string
         }

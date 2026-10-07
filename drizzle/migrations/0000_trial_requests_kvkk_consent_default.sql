@@ -1,0 +1,1 @@
+ALTER TABLE public.trial_requests ALTER COLUMN kvkk_consent_at SET DEFAULT now();

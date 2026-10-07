@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791393906006,
+      "tag": "0000_trial_requests_kvkk_consent_default",
+      "breakpoints": true
+    }
+  ]
+}
