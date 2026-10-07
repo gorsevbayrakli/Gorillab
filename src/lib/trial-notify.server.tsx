@@ -98,9 +98,9 @@ const hr = { borderColor: "#E4E0D8", margin: "16px 0" };
 const muted = { color: "#9A958E", fontSize: "13px" };
 
 export async function sendTrialNotification(data: TrialNotifyData): Promise<{ sent: boolean; reason?: string }> {
-  const apiKey = process.env.LOVABLE_API_KEY;
-  const senderDomain = process.env.EMAIL_SENDER_DOMAIN;
-  const recipients = (process.env.NOTIFY_EMAIL ?? "")
+  const apiKey = process.env["LOVABLE_API_KEY"];
+  const senderDomain = process.env["EMAIL_SENDER_DOMAIN"];
+  const recipients = (process.env["NOTIFY_EMAIL"] ?? "")
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
@@ -126,7 +126,7 @@ export async function sendTrialNotification(data: TrialNotifyData): Promise<{ se
   const res = await sendLovableEmail(
     {
       to: to!,
-      cc: cc.length ? cc : undefined,
+      ...(cc.length ? { cc } : {}),
       from: { name: SITE_NAME, address: `noreply@${senderDomain}` },
       sender_domain: senderDomain,
       subject: `Yeni deneme dersi talebi: ${data.name}`,
