@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
+import { notifyTrialRequest } from "@/lib/trial-notify.functions";
 import { QUIZ } from "./data";
 import { EASE } from "./motion";
 
@@ -58,6 +59,10 @@ export function Quiz() {
       return;
     }
     setDone(true);
+    // E-posta bildirimi arka planda gider; sonucu form akışını etkilemez.
+    notifyTrialRequest({
+      data: { name: name.trim(), phone: fullPhone, blocker: answers.blocker ?? "", discipline: answers.discipline ?? "", days: answers.days ?? "" },
+    }).catch((err) => console.error("trial notification call failed:", err));
   };
 
   const total = 4;
