@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
-import { QUIZ, waLink } from "./data";
+import { QUIZ } from "./data";
 import { EASE } from "./motion";
 
 const normalizePhone = (raw: string) => {
