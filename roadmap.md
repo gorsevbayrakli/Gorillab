@@ -7,3 +7,4 @@
 - [x] Hero video caption removed — verified live at desktop + mobile
 - [ ] Resend bildirim e-postası (stüdyo e-posta adresi + Resend bağlantısı bekleniyor)
 - [x] Update Yiğit BİLİR trainer portrait, disciplines and quote
+- [x] Trainer cards: Doğukan removed, Anıl BİLİR (Kickboks · Muay Thai · Boks · Fitness) added with portrait and quote; row centered on desktop
