@@ -199,7 +199,7 @@ function Egitmenler() {
   return (
     <section id="egitmenler" className="grain scroll-mt-16 border-t py-24 md:py-32">
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
-        <RevealLines className="display mb-12 text-6xl md:text-8xl" lines={["Eğitmenler"]} />
+        <RevealLines className="display mb-12 text-6xl md:text-8xl md:text-center" lines={["Eğitmenler"]} />
       </div>
       <div className="scrollbar-hidden relative z-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:justify-center md:px-8">
         {EGITMENLER.map((trainer, index) => (
