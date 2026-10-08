@@ -37,8 +37,12 @@ export const EGITMENLER = [
     disciplines: "Boks · Kickboks · Muay-thai",
     quote: "Benimle birlikte kendinin en iyi versiyonuna adımını at",
   },
-  { name: "Anıl", mainDiscipline: "[Branşlar]", disciplines: "", quote: "[Eğitmen cümlesi]" },
-  { name: "Doğukan", mainDiscipline: "[Branşlar]", disciplines: "", quote: "[Eğitmen cümlesi]" },
+  {
+    name: "Anıl BİLİR",
+    mainDiscipline: "Kickboks",
+    disciplines: "Muay Thai · Boks · Fitness",
+    quote: "Tecrübeyle güçlen, doğru antrenmanla dönüş",
+  },
 ];
 
 export const SSS = [

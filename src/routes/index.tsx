@@ -15,11 +15,12 @@ import ringImage from "@/assets/gorillab/ring.jpg.asset.json";
 import strengthImage from "@/assets/gorillab/strength.jpg.asset.json";
 import trainingVideo from "@/assets/gorillab/training.mp4.asset.json";
 import yigitImage from "@/assets/gorillab/yigit-bilir.jpg.asset.json";
+import anilImage from "@/assets/gorillab/anil-bilir.jpg.asset.json";
 
 const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Reformer Pilates";
 const DESC = "Maltepe'de birebir boks, kickboks, Muay Thai ve reformer pilates. Aylık üyelik yok, ilk ders ücretsiz. Eğitmenin seni tanıyor.";
 const LESSON_IMAGES = [boxingHeroImage, coachingImage.url, strengthImage.url, reformerImage.url] as const;
-const TRAINER_IMAGES = [yigitImage.url, boxingHeroImage, pullupImage.url] as const;
+const TRAINER_IMAGES = [yigitImage.url, anilImage.url] as const;
 const GALLERY_IMAGES = [ringImage.url, gymImage.url, strengthImage.url, reformerImage.url, boxingHeroImage, pullupImage.url, coachingImage.url] as const;
 
 const jsonLd = {
@@ -198,11 +199,11 @@ function Egitmenler() {
   return (
     <section id="egitmenler" className="grain scroll-mt-16 border-t py-24 md:py-32">
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
-        <RevealLines className="display mb-12 text-6xl md:text-8xl" lines={["Eğitmenler"]} />
+        <RevealLines className="display mb-12 text-6xl md:text-8xl md:text-center" lines={["Eğitmenler"]} />
       </div>
-      <div className="scrollbar-hidden relative z-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:px-8">
+      <div className="scrollbar-hidden relative z-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:justify-center md:px-8">
         {EGITMENLER.map((trainer, index) => (
-          <article key={trainer.name} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem]">
+          <article key={trainer.name} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem] md:w-[26rem]">
             <div className="grayscale transition-all duration-500 group-hover:grayscale-0">
               <Photo label={`${trainer.name}, Gorillab Studio eğitmeni`} src={TRAINER_IMAGES[index] ?? coachingImage.url} className="aspect-[3/4]" parallax={false} />
             </div>
