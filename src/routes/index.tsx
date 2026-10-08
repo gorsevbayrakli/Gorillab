@@ -14,11 +14,12 @@ import reformerImage from "@/assets/gorillab/reformer.jpg.asset.json";
 import ringImage from "@/assets/gorillab/ring.jpg.asset.json";
 import strengthImage from "@/assets/gorillab/strength.jpg.asset.json";
 import trainingVideo from "@/assets/gorillab/training.mp4.asset.json";
+import yigitImage from "@/assets/gorillab/yigit-bilir.jpg.asset.json";
 
 const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Reformer Pilates";
 const DESC = "Maltepe'de birebir boks, kickboks, Muay Thai ve reformer pilates. Aylık üyelik yok, ilk ders ücretsiz. Eğitmenin seni tanıyor.";
 const LESSON_IMAGES = [boxingHeroImage, coachingImage.url, strengthImage.url, reformerImage.url] as const;
-const TRAINER_IMAGES = [coachingImage.url, boxingHeroImage, pullupImage.url] as const;
+const TRAINER_IMAGES = [yigitImage.url, boxingHeroImage, pullupImage.url] as const;
 const GALLERY_IMAGES = [ringImage.url, gymImage.url, strengthImage.url, reformerImage.url, boxingHeroImage, pullupImage.url, coachingImage.url] as const;
 
 const jsonLd = {
@@ -200,14 +201,15 @@ function Egitmenler() {
         <RevealLines className="display mb-12 text-6xl md:text-8xl" lines={["Eğitmenler"]} />
       </div>
       <div className="scrollbar-hidden relative z-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:px-8">
-        {EGITMENLER.map((n, index) => (
-          <article key={n} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem]">
+        {EGITMENLER.map((trainer, index) => (
+          <article key={trainer.name} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem]">
             <div className="grayscale transition-all duration-500 group-hover:grayscale-0">
-              <Photo label={`${n}, Gorillab Studio antrenmanı`} src={TRAINER_IMAGES[index] ?? coachingImage.url} className="aspect-[3/4]" parallax={false} />
+              <Photo label={`${trainer.name}, Gorillab Studio eğitmeni`} src={TRAINER_IMAGES[index] ?? coachingImage.url} className="aspect-[3/4]" parallax={false} />
             </div>
-            <h3 className="display mt-4 text-5xl">{n}</h3>
-            <p className="mt-1 text-sm font-medium uppercase tracking-widest text-primary">[Branşlar]</p>
-            <p className="mt-2 text-muted-foreground">“[Eğitmen cümlesi]”</p>
+            <h3 className="display mt-4 text-5xl">{trainer.name}</h3>
+            <p className="mt-1 text-sm font-medium uppercase tracking-widest text-primary">{trainer.mainDiscipline}</p>
+            {trainer.disciplines ? <p className="mt-2 text-sm text-foreground/85">{trainer.disciplines}</p> : null}
+            <p className="mt-2 text-muted-foreground">“{trainer.quote}”</p>
           </article>
         ))}
       </div>

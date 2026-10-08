@@ -30,7 +30,16 @@ export const ADIMLAR = [
   { n: "03", t: "Birebir ders", d: "Her ders sadece seninle. Grup yok, sıra yok, bekleyen makine yok." },
 ];
 
-export const EGITMENLER = ["Yiğit", "Anıl", "Doğukan"];
+export const EGITMENLER = [
+  {
+    name: "Yiğit BİLİR",
+    mainDiscipline: "Vücut geliştirme",
+    disciplines: "Boks · Kickboks · Muay-thai",
+    quote: "Benimle birlikte kendinin en iyi versiyonuna adımını at",
+  },
+  { name: "Anıl", mainDiscipline: "[Branşlar]", disciplines: "", quote: "[Eğitmen cümlesi]" },
+  { name: "Doğukan", mainDiscipline: "[Branşlar]", disciplines: "", quote: "[Eğitmen cümlesi]" },
+];
 
 export const SSS = [
   { q: "Hiç spor geçmişim yok, başlayabilir miyim?", a: "Evet. Dersler birebir olduğu için tempo tamamen sana göre ayarlanır." },
