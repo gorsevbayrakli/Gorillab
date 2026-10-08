@@ -201,9 +201,9 @@ function Egitmenler() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
         <RevealLines className="display mb-12 text-6xl md:text-8xl" lines={["Eğitmenler"]} />
       </div>
-      <div className="scrollbar-hidden relative z-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:px-8">
+      <div className="scrollbar-hidden relative z-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:justify-center md:px-8">
         {EGITMENLER.map((trainer, index) => (
-          <article key={trainer.name} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem]">
+          <article key={trainer.name} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem] md:w-[26rem]">
             <div className="grayscale transition-all duration-500 group-hover:grayscale-0">
               <Photo label={`${trainer.name}, Gorillab Studio eğitmeni`} src={TRAINER_IMAGES[index] ?? coachingImage.url} className="aspect-[3/4]" parallax={false} />
             </div>
