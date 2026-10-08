@@ -6,4 +6,4 @@
 - [x] Google reviews: real reviews (5.0, 35 reviews) now in "Üyeler anlatıyor" carousel, links to Google Maps
 - [x] Hero video caption removed — verified live at desktop + mobile
 - [ ] Resend bildirim e-postası (stüdyo e-posta adresi + Resend bağlantısı bekleniyor)
-- [ ] Update Yiğit BİLİR trainer portrait, disciplines and quote
+- [x] Update Yiğit BİLİR trainer portrait, disciplines and quote
