@@ -3,8 +3,9 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Quiz } from "@/components/site/Quiz";
+import { GalleryViewer } from "@/components/site/GalleryViewer";
 import { Circled, EASE, Magnetic, Photo, RevealLines } from "@/components/site/motion";
-import { ADIMLAR, DERSLER, EGITMENLER, GALERI, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, INSTAGRAM, SSS, YORUMLAR, waLink } from "@/components/site/data";
+import { ADIMLAR, DERSLER, EGITMENLER, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, INSTAGRAM, SSS, YORUMLAR, waLink } from "@/components/site/data";
 import boxingHeroVideo from "@/assets/gorillab/boxing-hero.mp4";
 import boxingHeroImage from "@/assets/gorillab/boxing-hero.jpg";
 import coachingImage from "@/assets/gorillab/coaching.jpg.asset.json";
@@ -274,7 +275,6 @@ function Yorumlar() {
 }
 
 function Galeri() {
-  const spans = ["md:col-span-2 md:row-span-2", "md:col-span-2", "", "", "md:row-span-2", "", "", "", "", "", "", ""];
   return (
     <section className="grain py-24 md:py-32" aria-label="Galeri">
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
@@ -282,11 +282,7 @@ function Galeri() {
           <RevealLines className="display text-6xl md:text-8xl" lines={["Stüdyo"]} />
           <a href={INSTAGRAM} target="_blank" rel="noopener" className="font-medium underline underline-offset-4 hover:text-primary">@gorillabstudio</a>
         </div>
-        <div className="grid auto-rows-[160px] grid-cols-2 gap-3 md:auto-rows-[220px] md:grid-cols-4">
-          {GALERI.map((g, k) => (
-            <Photo key={g} label={g} src={GALLERY_IMAGES[k] ?? ringImage.url} className={`h-full ${spans[k]}`} />
-          ))}
-        </div>
+        <GalleryViewer images={GALLERY_IMAGES} />
       </div>
     </section>
   );
