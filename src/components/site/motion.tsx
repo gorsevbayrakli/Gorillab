@@ -71,7 +71,7 @@ export function Photo({ label, src, className, parallax = true }: { label: strin
         viewport={{ once: true }}
         transition={{ duration: 1.4, ease: EASE }}
       >
-        {src ? <img src={src} alt="" loading="lazy" className="h-full w-full object-cover" /> : null}
+        {src ? <img src={src} alt="" loading="lazy" className="h-full w-full object-cover object-[50%_30%]" /> : null}
       </motion.div>
       {!src ? (
         <span className="absolute inset-0 flex items-center justify-center p-4 text-center font-mono text-xs uppercase tracking-wider text-muted-foreground">
