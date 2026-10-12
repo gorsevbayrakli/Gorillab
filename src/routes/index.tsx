@@ -272,7 +272,7 @@ function Yorumlar() {
 }
 
 function Galeri() {
-  const spans = ["md:col-span-2 md:row-span-2", "", "md:row-span-2", "", "md:col-span-2", "", ""];
+  const spans = ["md:col-span-2 md:row-span-2", "md:col-span-2", "", "", "md:row-span-2", "", "", "", "", "", "", ""];
   return (
     <section className="grain py-24 md:py-32" aria-label="Galeri">
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
