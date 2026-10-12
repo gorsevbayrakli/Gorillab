@@ -22,6 +22,7 @@ import trainingVideo from "@/assets/gorillab/training.mp4.asset.json";
 import treadmillsImage from "@/assets/gorillab/treadmills.jpg.asset.json";
 import yigitImage from "@/assets/gorillab/yigit-bilir.jpg.asset.json";
 import anilImage from "@/assets/gorillab/anil-bilir.jpg.asset.json";
+import nazlicanImage from "@/assets/gorillab/nazlican-beltan.jpg.asset.json";
 
 const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Reformer Pilates";
 const DESC = "Maltepe'de birebir boks, kickboks, Muay Thai ve reformer pilates. Aylık üyelik yok, ilk ders ücretsiz. Eğitmenin seni tanıyor.";

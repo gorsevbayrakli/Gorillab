@@ -43,6 +43,12 @@ export const EGITMENLER = [
     disciplines: "Muay Thai · Boks · Fitness",
     quote: "Tecrübeyle güçlen, doğru antrenmanla dönüş",
   },
+  {
+    name: "Nazlıcan BELTAN",
+    mainDiscipline: "Reformer Pilates",
+    disciplines: "",
+    quote: "Bir saatini kendine ayır, bedenin ve ruhun teşekkür etsin!",
+  },
 ];
 
 export const SSS = [
