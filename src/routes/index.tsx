@@ -160,7 +160,7 @@ function Dersler() {
           {DERSLER.map((d, index) => (
             <article key={d.t} className="group bg-surface">
               <div className="overflow-hidden">
-                <div>
+                <div className="transition-transform duration-700 ease-out group-hover:scale-105">
                   <Photo label={d.img} src={LESSON_IMAGES[index] ?? boxingHeroImage} className="aspect-[4/3]" />
                 </div>
               </div>

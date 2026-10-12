@@ -11,5 +11,5 @@
 
 - Marketing site sections live in src/components/site; copy/data in data.ts so Turkish text is edited in one place.
 - Public site media should be stored as project assets and rendered through the shared Photo component so sections retain consistent motion and cropping.
-- Photo renders the full original frame without overscan, zoom, or positional parallax; video framing anchors to the top and contains the frame on narrow screens to keep faces visible.
+- Photo uses centered cover cropping with overscan, scale-in, and optional parallax; video framing anchors to the top and contains the frame on narrow screens to keep faces visible.
 - Studio gallery interactions live in GalleryViewer, using an accessible dialog and uncropped full-size images so thumbnails and enlarged viewing stay separate.
