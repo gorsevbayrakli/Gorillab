@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Correct opening video and all photo framing so heads are not cropped; verify desktop and mobile
+
 - [x] Start member reviews with Funda Karabacak's supplied review
 - [x] Open studio gallery photos in a large viewer and verify interaction
 
