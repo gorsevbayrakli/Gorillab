@@ -3,6 +3,7 @@
 - [ ] Keep photo cover layout, adjust focal position only; leave videos unchanged
 - [ ] Keep member review height and arrow positions stable across reviews
 - [ ] Remove the review mentioning Doğukan
+- [ ] Restore studio thumbnail framing and close enlarged photos when clicking empty surrounding space
 
 - [x] Correct opening video and all photo framing so heads are not cropped; verified desktop and mobile screenshots and gallery interaction
 
