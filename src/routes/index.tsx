@@ -27,7 +27,20 @@ const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Re
 const DESC = "Maltepe'de birebir boks, kickboks, Muay Thai ve reformer pilates. Aylık üyelik yok, ilk ders ücretsiz. Eğitmenin seni tanıyor.";
 const LESSON_IMAGES = [boxingHeroImage, coachingImage.url, strengthImage.url, reformerImage.url] as const;
 const TRAINER_IMAGES = [yigitImage.url, anilImage.url] as const;
-const GALLERY_IMAGES = [ringImage.url, gymImage.url, strengthImage.url, reformerImage.url, boxingHeroImage, pullupImage.url, coachingImage.url] as const;
+const GALLERY_IMAGES = [
+  ringImage.url,
+  gymImage.url,
+  dumbbellsImage.url,
+  treadmillsImage.url,
+  pilates1Image.url,
+  pilates2Image.url,
+  lobbyImage.url,
+  pilates3Image.url,
+  strengthImage.url,
+  boxingHeroImage,
+  pullupImage.url,
+  coachingImage.url,
+] as const;
 
 const jsonLd = {
   "@context": "https://schema.org",
