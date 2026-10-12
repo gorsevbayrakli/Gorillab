@@ -1,5 +1,8 @@
 # Roadmap
 
+- [ ] Start member reviews with Funda Karabacak's supplied review
+- [ ] Open studio gallery photos in a large viewer and verify interaction
+
 - [x] Hide horizontal scrollbar on Eğitmenler section
 - [x] Add Instagram media to the site
 - [x] Hero: remove burned-in Instagram caption text from video (cropped video + poster, wired everywhere boxing image was used)
