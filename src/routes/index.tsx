@@ -27,7 +27,7 @@ import nazlicanImage from "@/assets/gorillab/nazlican-beltan.jpg.asset.json";
 const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Reformer Pilates";
 const DESC = "Maltepe'de birebir boks, kickboks, Muay Thai ve reformer pilates. Aylık üyelik yok, ilk ders ücretsiz. Eğitmenin seni tanıyor.";
 const LESSON_IMAGES = [boxingHeroImage, coachingImage.url, strengthImage.url, reformerImage.url] as const;
-const TRAINER_IMAGES = [yigitImage.url, anilImage.url] as const;
+const TRAINER_IMAGES = [yigitImage.url, anilImage.url, nazlicanImage.url] as const;
 const GALLERY_IMAGES = [
   ringImage.url,
   gymImage.url,
@@ -223,7 +223,7 @@ function Egitmenler() {
       </div>
       <div className="scrollbar-hidden relative z-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:justify-center md:px-8">
         {EGITMENLER.map((trainer, index) => (
-          <article key={trainer.name} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem] md:w-[26rem]">
+          <article key={trainer.name} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem] md:w-[24rem]">
             <div className="grayscale transition-all duration-500 group-hover:grayscale-0">
               <Photo label={`${trainer.name}, Gorillab Studio eğitmeni`} src={TRAINER_IMAGES[index] ?? coachingImage.url} className="aspect-[3/4]" parallax={false} />
             </div>
