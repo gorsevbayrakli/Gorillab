@@ -71,6 +71,10 @@ export const GOOGLE_REVIEW_COUNT = 35;
 
 export const YORUMLAR = [
   {
+    name: "Funda Karabacak",
+    text: "Yaklaşık 2 aydır Yiğit Hoca'dan kickbox dersi alıyorum ve çok memnunum. Hem fitness çalışıyoruz hem ringde pratik yapıyoruz; bu da kondisyonumu geliştirmeme çok fayda sağlıyor. Hoca kadrosu çok profesyonel ve ilgili, size kendinizi rahat hissettirmek için ellerinden geleni yapıyorlar. Ekipmanlar çok iyi durumda. Alan çok temiz ve düzenli. Bir kadın olarak kendinizi güvende ve iyi hissedebileceğiniz bir spor salonu.",
+  },
+  {
     name: "Serkan",
     text: "Doğukan hocayla 6 ay boyunca ders aldım ve aldığım dersler sonucunda ciddi bir zayıflama formu geçirdim. Anıl hoca ve Yiğit hocanın da motivasyonu sayesinde istediğim kiloya fit bir şekilde girdim. Kesinlikle tavsiye edeceğim bir salon.",
   },
@@ -91,6 +95,13 @@ export const YORUMLAR = [
     text: "Hocalar ilgili, çok rahat spor yapabileceğiniz bir yer.",
   },
 ] as const;
+
+export const GALLERY_VIEWER = {
+  open: "Fotoğrafı büyüt",
+  close: "Kapat",
+  previous: "Önceki fotoğraf",
+  next: "Sonraki fotoğraf",
+};
 
 export const GALERI = [
   "ring ipleri, Gorillab Fight Academy",
