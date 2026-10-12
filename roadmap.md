@@ -8,3 +8,6 @@
 - [ ] Resend bildirim e-postası (stüdyo e-posta adresi + Resend bağlantısı bekleniyor)
 - [x] Update Yiğit BİLİR trainer portrait, disciplines and quote
 - [x] Trainer cards: Doğukan removed, Anıl BİLİR (Kickboks · Muay Thai · Boks · Fitness) added with portrait and quote; row centered on desktop
+- [x] Trainer cards: Nazlıcan BELTAN (Reformer Pilates) added with portrait and quote
+- [x] Trainer cards: İremnur ŞENSOY added with portrait and quote; desktop row is now a 4-column grid
+- [ ] İremnur ŞENSOY branşı doğrulanacak (şimdilik "Fitness" yazıyor, kullanıcıdan teyit bekleniyor)

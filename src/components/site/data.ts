@@ -49,6 +49,12 @@ export const EGITMENLER = [
     disciplines: "",
     quote: "Bir saatini kendine ayır, bedenin ve ruhun teşekkür etsin!",
   },
+  {
+    name: "İremnur ŞENSOY",
+    mainDiscipline: "Fitness",
+    disciplines: "",
+    quote: "Sağlıklı bir vücut, kendine verdiğin en değerli yatırımdır.",
+  },
 ];
 
 export const SSS = [
