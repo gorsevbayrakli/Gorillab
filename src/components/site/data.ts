@@ -81,11 +81,16 @@ export const YORUMLAR = [
 ] as const;
 
 export const GALERI = [
-  "ring ipleri, sabah ışığı",
-  "ağır torbalar sırada",
+  "ring ipleri, Gorillab Fight Academy",
+  "gorilla duvar resmi, ring ve makinalar",
+  "dumbbell rafı",
+  "koşu bandları",
+  "reformer stüdyosu",
+  "reformer makinaları",
+  "giriş holü",
+  "reformer stüdyosu, pencere ışığı",
   "terli eldivenler bankta",
+  "boks dersi",
+  "barfiks",
   "eğitmen ve üye, pao çalışması",
-  "reformer stüdyosu, geniş açı",
-  "bandajlı eller, siyah beyaz",
-  "ring köşesi, havlu ve su",
-];
+] as const;
