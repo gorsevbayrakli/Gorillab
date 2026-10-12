@@ -75,10 +75,6 @@ export const YORUMLAR = [
     text: "Yaklaşık 2 aydır Yiğit Hoca'dan kickbox dersi alıyorum ve çok memnunum. Hem fitness çalışıyoruz hem ringde pratik yapıyoruz; bu da kondisyonumu geliştirmeme çok fayda sağlıyor. Hoca kadrosu çok profesyonel ve ilgili, size kendinizi rahat hissettirmek için ellerinden geleni yapıyorlar. Ekipmanlar çok iyi durumda. Alan çok temiz ve düzenli. Bir kadın olarak kendinizi güvende ve iyi hissedebileceğiniz bir spor salonu.",
   },
   {
-    name: "Serkan",
-    text: "Doğukan hocayla 6 ay boyunca ders aldım ve aldığım dersler sonucunda ciddi bir zayıflama formu geçirdim. Anıl hoca ve Yiğit hocanın da motivasyonu sayesinde istediğim kiloya fit bir şekilde girdim. Kesinlikle tavsiye edeceğim bir salon.",
-  },
-  {
     name: "Rahşan",
     text: "Güler yüzlü hocalar, ferah çalışma alanı. Ders ücretlerinde de makul. Tavsiye ederim.",
   },

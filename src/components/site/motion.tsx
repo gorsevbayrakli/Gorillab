@@ -55,23 +55,23 @@ export function Circled({ children }: { children: ReactNode }) {
   );
 }
 
-/** Full-frame photos: motion never crops faces or the original composition. */
+/** Documentary photo with slow parallax + scale-in. */
 export function Photo({ label, src, className, parallax = true }: { label: string; src?: string; className?: string; parallax?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const opacity = useTransform(scrollYProgress, [0, 0.15], [0.85, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
   return (
     <div ref={ref} className={cn("relative overflow-hidden bg-surface", className)} role="img" aria-label={label}>
       <motion.div
-        className={cn("absolute inset-0 flex items-center justify-center", src ? "" : "photo-ph")}
-        style={parallax && !reduce ? { opacity } : {}}
-        initial={{ opacity: reduce ? 1 : 0.85 }}
-        whileInView={{ opacity: 1 }}
+        className={cn("absolute -inset-[10%] flex items-center justify-center", src ? "" : "photo-ph")}
+        style={parallax && !reduce ? { y } : {}}
+        initial={{ scale: reduce ? 1 : 1.08 }}
+        whileInView={{ scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.4, ease: EASE }}
       >
-        {src ? <img src={src} alt="" loading="lazy" className="h-full w-full object-contain" /> : null}
+        {src ? <img src={src} alt="" loading="lazy" className="h-full w-full object-cover object-[50%_30%]" /> : null}
       </motion.div>
       {!src ? (
         <span className="absolute inset-0 flex items-center justify-center p-4 text-center font-mono text-xs uppercase tracking-wider text-muted-foreground">

@@ -160,7 +160,7 @@ function Dersler() {
           {DERSLER.map((d, index) => (
             <article key={d.t} className="group bg-surface">
               <div className="overflow-hidden">
-                <div>
+                <div className="transition-transform duration-700 ease-out group-hover:scale-105">
                   <Photo label={d.img} src={LESSON_IMAGES[index] ?? boxingHeroImage} className="aspect-[4/3]" />
                 </div>
               </div>
@@ -243,15 +243,21 @@ function Egitmenler() {
 function Yorumlar() {
   const [i, setI] = useState(0);
   const n = YORUMLAR.length;
-  const y = YORUMLAR[i] ?? YORUMLAR[0]!;
   return (
     <section className="bg-surface py-24 md:py-32" aria-label="Üyeler anlatıyor">
       <div className="mx-auto max-w-5xl px-5 md:px-8">
         <RevealLines className="display mb-12 text-6xl md:text-8xl" lines={["Üyeler anlatıyor"]} />
-        <motion.blockquote key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: EASE }}>
-          <p className="max-w-3xl text-2xl font-medium leading-snug md:text-3xl">“{y.text}”</p>
-          <footer className="mt-6 text-sm text-muted-foreground">{y.name} · Google yorumu · {i + 1}/{n}</footer>
-        </motion.blockquote>
+        <div className="grid" aria-live="polite">
+          {YORUMLAR.map((review, index) => (
+            <motion.blockquote key={review.name} aria-hidden={index !== i}
+              className={`col-start-1 row-start-1 min-w-0 ${index === i ? "visible" : "invisible"}`}
+              initial={false} animate={{ opacity: index === i ? 1 : 0, y: index === i ? 0 : 20 }}
+              transition={{ duration: 0.6, ease: EASE }}>
+              <p className="max-w-3xl text-2xl font-medium leading-snug md:text-3xl">“{review.text}”</p>
+              <footer className="mt-6 text-sm text-muted-foreground">{review.name} · Google yorumu · {index + 1}/{n}</footer>
+            </motion.blockquote>
+          ))}
+        </div>
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
           <div className="flex gap-2">
             <button onClick={() => setI((i - 1 + n) % n)} aria-label="Önceki yorum" className="flex h-12 w-12 items-center justify-center rounded-full border hover:border-primary hover:text-primary">←</button>

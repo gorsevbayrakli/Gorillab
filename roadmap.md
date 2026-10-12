@@ -1,5 +1,10 @@
 # Roadmap
 
+- [x] Keep photo cover layout, adjust focal position only; leave videos unchanged
+- [x] Keep member review height and arrow positions stable across reviews; verified desktop and mobile
+- [x] Remove the review mentioning Doğukan
+- [x] Restore studio thumbnail framing and close enlarged photos when clicking empty surrounding space; verified desktop and mobile
+
 - [x] Correct opening video and all photo framing so heads are not cropped; verified desktop and mobile screenshots and gallery interaction
 
 - [x] Start member reviews with Funda Karabacak's supplied review
