@@ -18,7 +18,7 @@ export function GalleryViewer({ images }: { images: readonly string[] }) {
         {GALERI.map((caption, index) => (
           <Button key={caption} variant="ghost" onClick={() => setSelected(index)} aria-label={`${GALLERY_VIEWER.open}: ${caption}`}
             className={`block h-full w-full overflow-hidden rounded-none p-0 ${spans[index] ?? ""}`}>
-            <Photo label={caption} src={images[index]} className="h-full w-full" />
+            <Photo label={caption} src={images[index] ?? ""} className="h-full w-full" />
           </Button>
         ))}
       </div>

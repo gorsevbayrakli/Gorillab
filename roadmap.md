@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Start member reviews with Funda Karabacak's supplied review
-- [ ] Open studio gallery photos in a large viewer and verify interaction
+- [x] Start member reviews with Funda Karabacak's supplied review
+- [x] Open studio gallery photos in a large viewer and verify interaction
 
 - [x] Hide horizontal scrollbar on Eğitmenler section
 - [x] Add Instagram media to the site
