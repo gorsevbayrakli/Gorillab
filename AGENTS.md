@@ -13,3 +13,4 @@
 - Public site media should be stored as project assets and rendered through the shared Photo component so sections retain consistent motion and cropping.
 - Photo uses centered cover cropping with overscan, scale-in, and optional parallax; video framing anchors to the top and contains the frame on narrow screens to keep faces visible.
 - Studio gallery interactions live in GalleryViewer, using an accessible dialog and uncropped full-size images so thumbnails and enlarged viewing stay separate.
+- Member reviews share one grid cell with inactive entries hidden but measured, keeping section height and navigation stable without clipping long reviews.
