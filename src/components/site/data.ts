@@ -51,7 +51,7 @@ export const EGITMENLER = [
   },
   {
     name: "İremnur ŞENSOY",
-    mainDiscipline: "Fitness",
+    mainDiscipline: "Fizyoterapi",
     disciplines: "",
     quote: "Sağlıklı bir vücut, kendine verdiğin en değerli yatırımdır.",
   },
