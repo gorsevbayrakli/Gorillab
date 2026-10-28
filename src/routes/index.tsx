@@ -25,10 +25,11 @@ import yigitImage from "@/assets/gorillab/yigit-bilir.jpg.asset.json";
 import anilImage from "@/assets/gorillab/anil-bilir.jpg.asset.json";
 import nazlicanImage from "@/assets/gorillab/nazlican-beltan.jpg.asset.json";
 import iremnurImage from "@/assets/gorillab/iremnur-sensoy.jpg.asset.json";
+import muayThaiImage from "@/assets/gorillab/muay-thai.jpg.asset.json";
 
 const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Reformer Pilates";
 const DESC = "Maltepe'de birebir boks, kickboks, Muay Thai ve reformer pilates. Aylık üyelik yok, ilk ders ücretsiz. Eğitmenin seni tanıyor.";
-const LESSON_IMAGES = [boxingHeroImage, coachingImage.url, strengthImage.url, reformerImage.url] as const;
+const LESSON_IMAGES = [boxingHeroImage, coachingImage.url, muayThaiImage.url, reformerImage.url] as const;
 const TRAINER_IMAGES = [yigitImage.url, anilImage.url, nazlicanImage.url, iremnurImage.url] as const;
 const GALLERY_IMAGES = [
   ringImage.url,
