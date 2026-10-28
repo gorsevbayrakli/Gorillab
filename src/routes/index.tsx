@@ -29,21 +29,21 @@ import muayThaiImage from "@/assets/gorillab/muay-thai.jpg";
 
 const TITLE = "Gorillab Studio | Maltepe Birebir Boks, Kickboks, Muay Thai ve Reformer Pilates";
 const DESC = "Maltepe'de birebir boks, kickboks, Muay Thai ve reformer pilates. Aylık üyelik yok, ilk ders ücretsiz. Eğitmenin seni tanıyor.";
-const LESSON_IMAGES = [boxingHeroImage, coachingImage.url, muayThaiImage.url, reformerImage.url] as const;
-const TRAINER_IMAGES = [yigitImage.url, anilImage.url, nazlicanImage.url, iremnurImage.url] as const;
+const LESSON_IMAGES = [boxingHeroImage, coachingImage, muayThaiImage, reformerImage] as const;
+const TRAINER_IMAGES = [yigitImage, anilImage, nazlicanImage, iremnurImage] as const;
 const GALLERY_IMAGES = [
-  ringImage.url,
-  gymImage.url,
-  dumbbellsImage.url,
-  treadmillsImage.url,
-  pilates1Image.url,
-  pilates2Image.url,
-  lobbyImage.url,
-  pilates3Image.url,
-  strengthImage.url,
+  ringImage,
+  gymImage,
+  dumbbellsImage,
+  treadmillsImage,
+  pilates1Image,
+  pilates2Image,
+  lobbyImage,
+  pilates3Image,
+  strengthImage,
   boxingHeroImage,
-  pullupImage.url,
-  coachingImage.url,
+  pullupImage,
+  coachingImage,
 ] as const;
 
 const jsonLd = {
@@ -228,7 +228,7 @@ function Egitmenler() {
         {EGITMENLER.map((trainer, index) => (
           <article key={trainer.name} className="group w-[75vw] shrink-0 snap-start sm:w-[22rem] md:w-auto">
             <div className="grayscale transition-all duration-500 group-hover:grayscale-0">
-              <Photo label={`${trainer.name}, Gorillab Studio eğitmeni`} src={TRAINER_IMAGES[index] ?? coachingImage.url} className="aspect-[3/4]" parallax={false} />
+              <Photo label={`${trainer.name}, Gorillab Studio eğitmeni`} src={TRAINER_IMAGES[index] ?? coachingImage} className="aspect-[3/4]" parallax={false} />
             </div>
             <h3 className="display mt-4 text-4xl lg:text-5xl">{trainer.name}</h3>
             <p className="mt-1 text-sm font-medium uppercase tracking-widest text-primary">{trainer.mainDiscipline}</p>
@@ -327,8 +327,8 @@ function FinalCta() {
   return (
     <section className="grain relative overflow-hidden py-32 md:py-48">
       <div className="absolute inset-0 -z-0">
-        <video className="h-full w-full object-contain object-top md:object-cover" autoPlay muted loop playsInline preload="auto" poster={coachingImage.url} aria-label="Gorillab Studio antrenmanı">
-          <source src={trainingVideo.url} type="video/mp4" />
+        <video className="h-full w-full object-contain object-top md:object-cover" autoPlay muted loop playsInline preload="auto" poster={coachingImage} aria-label="Gorillab Studio antrenmanı">
+          <source src={trainingVideo} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-background/60" />
       </div>
