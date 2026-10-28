@@ -20,4 +20,5 @@
 - [x] Trainer cards: Doğukan removed, Anıl BİLİR (Kickboks · Muay Thai · Boks · Fitness) added with portrait and quote; row centered on desktop
 - [x] Trainer cards: Nazlıcan BELTAN (Reformer Pilates) added with portrait and quote
 - [x] Trainer cards: İremnur ŞENSOY added with portrait and quote; desktop row is now a 4-column grid
-- [ ] İremnur ŞENSOY branşı doğrulanacak (şimdilik "Fitness" yazıyor, kullanıcıdan teyit bekleniyor)
+- [x] İremnur ŞENSOY branşı: "Fizyoterapi" olarak düzeltildi (kullanıcı teyidi)
+- [x] Dersler: Muay Thai kartına kullanıcının gönderdiği ring fotoğrafı kondu; masaüstü ve mobilde doğrulandı
